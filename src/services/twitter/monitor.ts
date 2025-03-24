@@ -37,7 +37,7 @@ async function checkMentions(): Promise<void> {
     // }
     console.log("\n🔍 Checking for new mentions...");
     const query = `to:${process.env.TWITTER_USERNAME} -is:retweet`;
-    console.log("Query: %s", query);
+    // console.log("Query: %s", query);
     const maxMentions = 5;
     // for await (const tweet of scraper.getUserTweets(query, maxMentions)) {
     // const v2Scraper = await TwitterService.getInstance();
@@ -47,7 +47,7 @@ async function checkMentions(): Promise<void> {
       SearchMode.Latest
     )) {
       // for await (const tweet of v2Scraper.getMentions()) {
-      console.log("Fetched:", tweet.id);
+      // console.log("Fetched:", tweet.id);
       // Skip our own tweets
       if (tweet.username === process.env.TWITTER_USERNAME) {
         continue;

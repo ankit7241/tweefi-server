@@ -20,14 +20,12 @@ async function checkMentions() {
         console.log("Last tweet fetched at:", new Date(Number(lastTweetFetchedAt)).toLocaleString());
         console.log("\n🔍 Checking for new mentions...");
         const query = `to:${process.env.TWITTER_USERNAME} -is:retweet`;
-        console.log("Query: %s", query);
         const maxMentions = 5;
         try {
             for (var _d = true, _e = __asyncValues(scraper.searchTweets(query, maxMentions, SearchMode.Latest)), _f; _f = await _e.next(), _a = _f.done, !_a; _d = true) {
                 _c = _f.value;
                 _d = false;
                 const tweet = _c;
-                console.log("Fetched:", tweet.id);
                 if (tweet.username === process.env.TWITTER_USERNAME) {
                     continue;
                 }

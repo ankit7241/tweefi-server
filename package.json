@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "tsc && node dist/index.js",
+    "dev": "tsc && node --max-old-space-size=448 dist/index.js",
     "build": "tsc && pnpm run generate-types",
     "start": "node dist/index.js",
     "lint": "prettier --write . && eslint . --fix --config .eslintrc.json",
